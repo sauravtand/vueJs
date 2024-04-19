@@ -1,26 +1,38 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <ProductList :products="filteredProducts" />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import ProductList from './components/ProductList.vue';
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
-  }
-}
+      ProductList,
+  },
+  data() {
+    return {
+      // Sample data
+      categories: ['Electronics', 'Clothing', 'Books'],
+      ratings: [1, 2, 3, 4, 5],
+      sortingOptions: ['Price: Low to High', 'Price: High to Low'],
+      products: [/* Array of products fetched from API */],
+      filteredProducts: [/* Array of filtered products */],
+    };
+  },
+  methods: {
+    updateProductList() {
+        },
+    sortProductList() {
+      },
+    searchProduct() {
+        },
+  },
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+/* Add styles here */
 </style>
